@@ -5,7 +5,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     env: str = "dev"
-    log_level: str = "info"
+    log_level: str = "INFO"
+    app_config_filepath: str = "config.yaml"
 
     # Redis缓存配置
     redis_host: str = "localhost"
