@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Protocol, Optional
 
-from external.mesage_queue import MessageQueue
+from app.domain.external.mesage_queue import MessageQueue
 
 
 class TaskRunner(ABC):
@@ -61,7 +61,7 @@ class Task(Protocol):
     def create(cls, task_runner: TaskRunner) -> "Task":
         """根据传递的任务运行器，创建任务"""
         ...
-    
+
     @classmethod
     def destory(cls) -> None:
         """销毁所有的任务实例"""
